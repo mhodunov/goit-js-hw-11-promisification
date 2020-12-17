@@ -8,14 +8,14 @@ const randomIntegerFromInterval = (min, max) => {
 
 const makeTransaction = (transaction) => {
   const delay = randomIntegerFromInterval(200, 500);
-  const { id } = transaction;
+  const {id} = transaction;
 
   return new Promise((resolve, reject) => {
     const canProcess = Math.random() > 0.3;
 
     setTimeout(() => {
       if (canProcess) {
-        resolve({ id, delay });
+        resolve({id, delay});
       }
 
       reject(id);
@@ -23,7 +23,7 @@ const makeTransaction = (transaction) => {
   });
 };
 
-const logSuccess = ({ id, delay }) => {
+const logSuccess = ({id, delay}) => {
   console.log(`Transaction ${id} processed in ${delay}ms`);
 };
 
